@@ -34,6 +34,14 @@ int _printf(const char *format, ...)
 					format += 2;
 					break;
 				}
+				case '%':
+				{
+					count += write(1, &(*format), 1);
+					format++;
+					break;
+				}
+				default:
+					format++;
 			}
 		}
 		else
