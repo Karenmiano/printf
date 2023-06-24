@@ -41,6 +41,11 @@ int _printf(const char *format, ...)
 					format += 2;
 					break;
 				}
+				default:
+				{
+					count += write(1, &(*format), 1);
+					format++;
+				}
 			}
 		}
 		else
