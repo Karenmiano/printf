@@ -10,9 +10,8 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	char d;
+	char d, *str;
 	int count = 0;
-	char *str;
 
 	va_start(args, format);
 	while (*format != '\0')
