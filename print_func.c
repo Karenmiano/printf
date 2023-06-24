@@ -30,6 +30,10 @@ int _printf(const char *format, ...)
 				case 's':
 				{
 					str = va_arg(args, char *);
+					if (str == NULL)
+					{
+						str = "(nil)";
+					}
 					count += write(1, str, _strlen(str));
 					format += 2;
 					break;
