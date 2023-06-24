@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 /**
  * _printf - prints to stdout
  * @format: the string to be printed
@@ -32,7 +33,7 @@ int _printf(const char *format, ...)
 					str = va_arg(args, char *);
 					if (str == NULL)
 					{
-						str = "(nil)";
+						exit(-1);
 					}
 					count += write(1, str, _strlen(str));
 					format += 2;
