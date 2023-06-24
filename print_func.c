@@ -31,10 +31,6 @@ int _printf(const char *format, ...)
 				case 's':
 				{
 					str = va_arg(args, char *);
-					if (str == NULL)
-					{
-						str = "(nil)";
-					}
 					count += write(1, str, _strlen(str));
 					format += 2;
 					break;
@@ -42,11 +38,9 @@ int _printf(const char *format, ...)
 				case '%':
 				{
 					count += write(1, &(*format), 1);
-					format++;
+					format += 2;
 					break;
 				}
-				default:
-					format++;
 			}
 		}
 		else
@@ -58,5 +52,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-
