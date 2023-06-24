@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 					str = va_arg(args, char *);
 					if (str == NULL)
 					{
-						exit(-1);
+						str = "(nil)";
 					}
 					count += write(1, str, _strlen(str));
 					format += 2;
