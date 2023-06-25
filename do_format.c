@@ -43,3 +43,18 @@ int do_percent(const char **r, va_list rargs __attribute__((unused)))
 
 	return (1);
 }
+/**
+ * _strlen - finds the length of a string
+ * @s: address of the string
+ * Return: lenth of the string
+ */
+int _strlen(char *s)
+{
+int i = 0;
+
+while (s[i] != '\0')
+{
+i++;
+}
+return (i);
+}
