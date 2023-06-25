@@ -23,6 +23,8 @@ int do_char(const char **p, va_list cargs)
 int do_string(const char **s, va_list sargs)
 {
 	char *str = va_arg(sargs, char *);
+	if (str == NULL)
+		str = "(nil)";
 	(*s) += 2;
 
 	return (write(1, str, _strlen(str)));
