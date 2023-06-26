@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
 /**
  * _printf - prints to stdout
  * @format: the string to be printed
@@ -13,6 +11,8 @@ int _printf(const char *format, ...)
 	form arr[] = {
 		{'c', do_char},
 		{'s', do_string},
+		{'d', do_decimal},
+		{'i', do_decimal},
 		{'%', do_percent}
 	};
 	const char **ptr;
@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			for (i = 0; i < 3; i++)
+			for (i = 0; i < 5; i++)
 			{
 				if (*(format + 1) == arr[i].c)
 				{
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (i == 3)
+			if (i == 5)
 			{
 				count += write(1, &(*format), 1);
 				format++;

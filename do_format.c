@@ -10,6 +10,7 @@
 int do_char(const char **p, va_list cargs)
 {
 	char d = va_arg(cargs, int);
+
 	(*p) += 2;
 
 	return (write(1, &d, 1));
@@ -42,6 +43,19 @@ int do_percent(const char **r, va_list rargs __attribute__((unused)))
 	(*r) += 2;
 
 	return (1);
+}
+/**
+ * do_decimal - handles both %d and %i
+ * @d: pointer to pointer
+ * @dargs: holds optional argument
+ * Return: number of digits in an integer
+ */
+int do_decimal(const char **d, va_list dargs)
+{
+	int i = va_arg(dargs, int);
+
+	(*d) += 2;
+	return (print_number(i));
 }
 /**
  * _strlen - finds the length of a string
