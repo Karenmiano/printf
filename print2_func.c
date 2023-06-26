@@ -13,8 +13,11 @@ int _printf(const char *format, ...)
 	form arr[] = {
 		{'c', do_char},
 		{'s', do_string},
-		{'%', do_percent}
-	};
+		{'%', do_percent},
+		{'d' , do_percent},
+        {'i', do_string}
+	}; //
+	
 	const char **ptr;
 
 	if (format == NULL)
