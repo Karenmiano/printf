@@ -11,7 +11,7 @@
  */
 typedef struct form
 {
-	
+	char c;
 	int (*ptr)(const char **ptr, va_list args);
 } form;
 int _printf(const char *format, ...);
