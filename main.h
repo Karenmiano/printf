@@ -18,7 +18,4 @@ int do_char(const char **p, va_list cargs);
 int do_string(const char **s, va_list sargs);
 int do_percent(const char **r, va_list rargs);
 
-
-
-
 #endif
