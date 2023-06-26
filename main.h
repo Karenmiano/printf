@@ -1,5 +1,7 @@
-#ifndef MAIN_H
 #define MAIN_H
+#ifndef MAIN_H
+
+
 #include <stdarg.h>
 /**
  * struct form - structure that will choose correct function for
@@ -9,7 +11,7 @@
  */
 typedef struct form
 {
-	char c;
+	
 	int (*ptr)(const char **ptr, va_list args);
 } form;
 int _printf(const char *format, ...);
