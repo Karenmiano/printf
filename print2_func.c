@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	form arr[] = {
 		{'c', do_char},
 		{'s', do_string},
-		{'%', do_percent} //try to print
+		{'%', do_percent}
 	};
 	const char **ptr;
 
