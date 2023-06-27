@@ -3,7 +3,6 @@
 
 int main()
 {
-	_printf("I am %");
-	printf("I am %");
+	_printf("%b\n", 98);
 	return (0);
 }

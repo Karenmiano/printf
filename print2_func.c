@@ -10,8 +10,8 @@ int _printf(const char *format, ...)
 	int count = 0, i;
 	form arr[] = {
 		{'c', do_char}, {'s', do_string}, {'d', do_decimal},
-		{'i', do_decimal}, {'%', do_percent}, {'\0', no_percent}
-	};
+		{'i', do_decimal}, {'%', do_percent}, {'\0', no_percent},
+		{'b', do_binary}};
 	const char **ptr;
 
 	if (format == NULL)
@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			for (i = 0; i < 6; i++)
+			for (i = 0; i < 7; i++)
 			{
 				if (*(format + 1) == arr[i].c)
 				{
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (i == 6)
+			if (i == 7)
 			{
 				count += write(1, &(*format), 1);
 				format++;

@@ -47,3 +47,32 @@ int no_percent(const char **ptr, va_list targs __attribute__((unused)))
 	(*ptr) += 1;
 	return (0);
 }
+/**
+ * do_binary - handles %b specifier
+ * @b: pointer to pointer
+ * @bargs: holds optional argument
+ * Return: length of binary value written
+ */
+int do_binary(const char **b, va_list bargs)
+{
+	unsigned int n = va_arg(bargs, unsigned int);
+	int num;
+
+	num = binary(n);
+	(*b) += 2;
+	return (num);
+}
+/**
+ * binary - prints binary representation of a number
+ * @n: number
+ * Return: length of binary number
+ */
+int binary(unsigned int n)
+{
+	int t = 1;
+
+	if (n / 2)
+		t += binary(n / 2);
+	_putchar('0' + (n % 2));
+	return (t);
+}

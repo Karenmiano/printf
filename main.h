@@ -22,5 +22,7 @@ int do_decimal(const char **d, va_list dargs);
 int print_number(int n);
 int _putchar(char c);
 int no_percent(const char **ptr, va_list targs);
+int do_binary(const char **b, va_list bargs);
+int binary(unsigned int n);
 
 #endif
