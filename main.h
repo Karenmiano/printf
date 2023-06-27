@@ -12,7 +12,7 @@ typedef struct form
 {
 	char c;
 	int (*ptr)(const char **ptr, va_list args);
-} ;
+} form;
 int _printf(const char *format, ...);
 int _strlen(char *s);
 int do_char(const char **p, va_list cargs);
