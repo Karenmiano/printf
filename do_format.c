@@ -64,11 +64,11 @@ int do_decimal(const char **d, va_list dargs)
  */
 int _strlen(char *s)
 {
-int i = 0;
+	int i = 0;
 
-while (s[i] != '\0')
-{
-i++;
-}
-return (i);
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

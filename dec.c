@@ -6,12 +6,12 @@
  */
 int print_number(int n)
 {
-	int d = 10, divider = 1, num_digits = 1, count;
+	int d = 10, divider = 1, num_digits = 1, count = 0;
 	unsigned int temp, temp2;
 
 	if (n < 0)
 	{
-		_putchar('-');
+		count += _putchar('-');
 		temp = (unsigned int)(-n);
 	}
 	else
@@ -22,7 +22,7 @@ int print_number(int n)
 		num_digits++;
 		temp2 /= d;
 	}
-	count = num_digits;
+	count += num_digits;
 	while (num_digits > 1)
 	{
 		divider *= d;
