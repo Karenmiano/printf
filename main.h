@@ -21,5 +21,6 @@ int do_percent(const char **r, va_list rargs);
 int do_decimal(const char **d, va_list dargs);
 int print_number(int n);
 int _putchar(char c);
+int no_percent(const char **ptr, va_list targs);
 
 #endif

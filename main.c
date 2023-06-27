@@ -3,7 +3,7 @@
 
 int main()
 {
-	_printf("%d\n", 4,294,967,295);
-	printf("%d\n", 4,294,967,295);
+	_printf("I am %");
+	printf("I am %");
 	return (0);
 }

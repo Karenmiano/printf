@@ -9,11 +9,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0, i;
 	form arr[] = {
-		{'c', do_char},
-		{'s', do_string},
-		{'d', do_decimal},
-		{'i', do_decimal},
-		{'%', do_percent}
+		{'c', do_char}, {'s', do_string}, {'d', do_decimal},
+		{'i', do_decimal}, {'%', do_percent}, {'\0', no_percent}
 	};
 	const char **ptr;
 
@@ -24,7 +21,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			for (i = 0; i < 5; i++)
+			for (i = 0; i < 6; i++)
 			{
 				if (*(format + 1) == arr[i].c)
 				{
@@ -33,7 +30,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (i == 5)
+			if (i == 6)
 			{
 				count += write(1, &(*format), 1);
 				format++;

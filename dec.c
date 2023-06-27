@@ -36,3 +36,14 @@ int print_number(int n)
 	}
 	return (count);
 }
+/**
+ * no_percent - handles case where % is followed by '\0'
+ * @ptr: pointer to pointer
+ * @targs: holds optional arguments
+ * Return: 0 as nothing is printed
+ */
+int no_percent(const char **ptr, va_list targs __attribute__((unused)))
+{
+	(*ptr) += 1;
+	return (0);
+}
